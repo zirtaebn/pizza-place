@@ -1,0 +1,863 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+   
+
+}
+
+.cart-area1.displaynone, .cart-area2.displaynone,
+.empty-cart.displaynone{
+
+    display: none;
+}
+
+body::-webkit-scrollbar {
+
+    width: 15px;            
+}
+
+body::-webkit-scrollbar-track {
+
+    background:#fff;        
+}
+
+body::-webkit-scrollbar-thumb {
+
+    background-color: rgb(175, 173, 173);    
+    border: 2px solid #fff;  
+}
+
+.models{
+
+    display: none;
+}
+
+header{
+
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    align-items: center;
+    border-bottom: 1px solid #DCDCDC;
+    background-color: #4180a5;
+    color: #fff;
+    margin-bottom: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+header .header-logo{
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header .header-cart{
+
+    display: flex;
+    align-items: center;
+    padding: 7px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+header .header-cart:hover{
+
+    opacity: .8 ;
+}
+
+
+header .header-cart img{
+
+    width: 30px;
+}
+
+header .header-cart .header-cart-info{
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+
+aside .cart-area{
+
+    width: 35vw;
+    height: calc(100vh - 100px);
+    position: fixed;
+    right:0;
+    top: 100px;
+    transition: all ease .8s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    overflow-y: scroll;
+}
+
+.cart-area::-webkit-scrollbar {
+
+    width: 8px;               
+}
+
+.cart-area::-webkit-scrollbar-track {
+
+    background:#fff;        
+}
+
+.cart-area::-webkit-scrollbar-thumb {
+
+    background-color: rgb(202, 199, 199);    
+    border-radius: 5px;       
+    border: 1px solid #ccc;  
+}
+
+aside .show{
+    
+    margin-right: 0vw; 
+}
+
+aside .hide{
+
+    margin-right: -35vw;
+}
+
+aside .close-cart{
+
+    padding: 10px 20px
+}
+
+aside .close-cart img{
+
+    width: 12px;
+    cursor: pointer;
+}
+
+aside .empty-cart{
+
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-cart p:first-child{
+
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+.empty-cart p:last-child{
+
+    color: #8b8b8b;
+    font-size: 20px;
+    
+}
+
+aside .cart-area1,
+aside .cart-area2{
+    
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+}
+
+aside .cart-area1{
+
+    font-size: 18px; 
+}
+
+.cart-area1 p{
+
+    margin-bottom: 5px;
+}
+
+.cart-area1 .orders .order{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    border-bottom: 1px solid #8b8b8b;
+    font-weight: bold;
+}
+
+.order .pizza-qt-area-cart{
+
+    display: flex;
+    align-items: center;
+    height: auto;
+    background-color: #EEE;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.order .pizza-qt-area-cart button{
+
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    /* background-color: #4180a5; */
+}
+
+aside .cart-area-12{
+
+    margin-top: 10px;
+
+}
+
+.cart-area-12 .subtotal-area,
+.cart-area-12 .delivery-area{
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.delivery-area .delivery.free{
+
+    color: green;
+}
+
+aside .cart-area2{
+
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding: 0 40px;
+}
+
+
+.cart-area2 .total-area{
+
+    display: flex;
+    justify-content: space-between; 
+    margin: 20px 0;
+}
+
+.total-area span,
+.total-area .total{
+
+    font-size: 22px; 
+}
+
+
+
+.cart-area2 button{
+
+   width: 100%;
+   margin: 25px 0;
+   padding: 15px 20px;
+   font-size: 20px;
+   font-weight: bold;
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+   background-color: #2E6788;
+   color: #fff;
+   
+   
+}
+
+main{
+
+    padding: 20px 60px;
+}
+
+main .delivery-rate{
+
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #F7F7F7;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+main .delivery-rate span{
+
+    color: #2E6788;
+    font-weight: bold;
+}
+
+.pizza-area{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pizza-item{
+
+    margin-top: 30px;
+    padding: 10px 20px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pizza-item-link{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.pizza-item-add{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-top: -20px;
+    background-color: #2E6788;
+}
+
+.pizza-item .pizza-item-img {
+
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #DCDCDC;
+}
+
+.pizza-item .pizza-item-img img{
+
+    width: 180px;
+}
+
+.pizza-item-name{
+
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.pizza-item-desc{
+
+    text-align: center;
+}
+
+.pizza-window-area{
+
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all ease .4s;
+}
+
+.pizza-window-body{
+
+    width: 65%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+
+    
+}
+
+.pizza-window-body .pizza-window-body-ls{
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pizza-window-body-ls .close-window-mobile{
+
+    display: none;
+}
+
+.pizza-window-body-ls .pizza-img{
+
+    
+    margin-right: 30px;
+}
+
+.pizza-window-body-ls .pizza-img img{
+
+   height: 420px;
+   width: auto;
+}
+
+.pizza-window-body .pizza-window-body-rs{
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pizza-window-body-rs .close-window{
+
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    
+   
+}
+
+.pizza-window-body-rs .close-window img{
+
+    width: 12px;
+    cursor: pointer;
+}
+
+.pizza-window-body-rs .pizza-info{
+
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 15px;
+}
+
+.pizza-info h1{
+
+    font-size: 35px;
+}
+
+
+.pizza-info .pizza-desc{
+
+    margin: 20px 0  
+}
+
+.pizza-info .pizza-sizes{
+
+    margin: 20px 0 30px 0;
+    display: inline-flex;
+    background-color: #eee;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.pizza-sizes .pizza-size{
+
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pizza-sizes .pizza-size:first-child{
+
+    margin-left: 0px;
+}
+
+
+.pizza-sizes .pizza-size span{
+
+    font-size: 14px;
+    margin-left: 4px;
+    color: #8b8b8b;
+}
+
+.pizza-sizes .pizza-size:hover{
+
+   background-color: #ccc;
+}
+
+.pizza-sizes .pizza-size.selected,
+.add-cart button{
+
+    background-color: #2E6788;
+    color: #fff;
+}
+
+.pizza-price-area .pizza-prices{
+
+    display: flex;
+    align-items: center;
+}
+
+.pizza-prices .pizza-price{
+
+    margin: 20px 0 30px 0;
+    margin-right: 35px;
+    font-size: 30px;
+}
+
+.pizza-prices .pizza-qt-area{
+
+    display: flex;
+    align-items: center;
+    background-color: #EEE;
+    height: 30px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    
+    
+}
+
+.pizza-prices .pizza-qt-area button{
+
+    cursor: pointer;
+    border: none;
+    font-size: 22px;
+}
+
+.pizza-prices .pizza-qt-area button:first-child,
+.order .pizza-qt-area-cart button:first-child{
+
+    margin-right: 10px;
+}
+
+.pizza-prices .pizza-qt-area button:last-child,
+.order .pizza-qt-area-cart button:last-child{
+
+    margin-left: 10px;    
+}
+
+
+.button{
+
+    display: flex;
+    justify-content: center;
+}
+
+.add-cart button{
+
+    padding: 15px 40px;
+    margin: 7px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    
+}
+
+
+
+
+
+
+@media (max-width: 1050px){
+
+
+    aside .cart-area{
+
+        width: 50vw;
+        
+    }
+    
+    aside .hide{
+    
+        margin-right: -50vw;
+        
+    }
+
+    .pizza-area{
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pizza-window-body {
+
+        width: 80%;
+        height: 85%;
+    }
+
+    .pizza-sizes .pizza-size {
+
+    
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+
+
+}
+
+
+@media (max-width: 900px){
+
+
+    .pizza-window-body {
+
+        width: 95%;
+        height:90%;
+        
+    }
+
+    .pizza-window-body-ls .pizza-img img {
+
+        height: 340px;
+        width: auto;
+    }
+
+    .pizza-window-body-rs .pizza-info{
+
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 820px){
+
+
+   
+    .pizza-window-body {
+
+        width: 95%;
+        height: 50%;
+        
+    }
+    
+
+
+    .pizza-window-body-ls .pizza-img img {
+
+        height: 300px;
+        width: auto;
+    }
+}
+
+@media (max-width: 770px){
+
+    aside .cart-area{
+
+        width: 55vw;
+        
+    }
+    
+    aside .hide{
+    
+        margin-right: -55vw;       
+    }
+    .pizza-info h1 {
+
+        font-size: 30px;
+    }
+
+    .pizza-window-body {
+
+        width: 85%;
+        height: 90%;
+        overflow: hidden;
+        
+    }
+
+    .pizza-window-body-ls .pizza-img img {
+
+        height: 300px;
+        width: auto;
+    }
+}
+
+
+@media (max-width: 450px){
+
+    body.overflow-mobile{
+
+        overflow-y: hidden;
+    }
+
+    header .header-logo {
+        font-size: 20px;
+    }
+
+    header .header-cart{
+
+        padding: 7px 10px;
+    }
+
+    main{
+
+        padding: 0;
+    }
+
+    main .delivery-rate {
+
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 0;
+        
+    }
+
+    .pizza-area{
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    aside .cart-area{
+
+        width: 100vw;
+        
+    }
+    
+    
+    aside .hide{
+    
+        margin-right: -100vw;
+        
+    }
+
+    .pizza-window-body {
+
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        overflow-y: scroll;
+        align-items: center;
+        border-radius: 0;
+    
+    }
+
+    .pizza-window-body .pizza-window-body-ls{
+
+        flex-direction: column;
+        flex: 0;
+    }
+
+    .pizza-window-body-ls .close-window-mobile{
+
+        display: block;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
+
+    .pizza-window-body-ls .close-window-mobile img{
+
+        width: 16px;
+    }
+
+
+    .pizza-window-body-ls .pizza-img{
+
+        margin-right: 0;
+    }
+
+    .pizza-window-body-ls .pizza-img img {
+
+        height: 300px;
+        width: auto;
+    }
+
+    .pizza-window-body-rs .close-window{
+
+        display: none;
+    }
+
+
+    .pizza-sizes .pizza-size {
+
+    
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .add-cart button {
+        
+        width: 100%;
+    }
+
+    .cart-area1 .orders .order {
+        
+        font-size: 17px;
+    }
+
+
+
+}
+
+@media (max-width: 380px){
+
+
+    header{
+
+        padding: 0 40px;
+    }
+   
+    header .header-cart{
+
+        padding: 7px 8px;
+    }
+
+    .pizza-window-body-ls .pizza-img img {
+
+        height: 250px;
+        width: auto;
+    }
+
+    .cart-area1 .orders .order {
+
+        flex-direction: column;
+        align-items: flex-start;
+        
+        
+    }
+
+    .order .pizza-qt-area-cart{
+
+        margin: 10px 0
+    }
+
+    .cart-area2 button {
+
+        font-size: 17px;
+
+
+    }
+
+
+}
+
+@media (max-width: 320px){
+
+    header{
+
+        padding: 0 20px;
+    }
+
+    header .logo{
+
+        font-size: 17px;
+    }
+
+    .cart-area2 button {
+
+        font-size: 15px;
+    }
+
+    .empty-cart p:first-child{
+
+        font-size: 25px;
+       
+    }
+
+}

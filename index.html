@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icons/icon.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <title>Pizza Place - Delivery</title>
+</head>
+<body>
+
+    <div class="models">
+
+        <div class="pizza-item">
+            <div class="pizza-item-link">
+                <div class="pizza-item-img">
+                    <img src="" alt="">
+                </div>
+                <div class="pizza-item-add">
+                    +
+                </div>
+            </div>
+            <div class="pizza-item-price">
+                R$ --
+            </div>
+            <div class="pizza-item-name">--</div>
+            <div class="pizza-item-desc">--</div>
+        </div>
+
+        <div class="order">
+            <div><span class="qt"></span> <span class="name"></span> <span class="size"></span></div> 
+            <div class="pizza-qt-area-cart">
+                <button class="pizza-qt-minus-cart">-</button>
+                <div class="pizza-qt-cart"></div>
+                <button class="pizza-qt-plus-cart">+</button>
+            </div>
+            <span class="price"></span>
+        </div>    
+    </div>
+
+    <header>
+
+        <div class="header-logo">
+            <p>
+                PIZZA PLACE
+            </p>
+        </div>
+
+        <div class="header-cart">
+            <img src="./assets/icons/cart.png" alt="">
+            <p class="header-cart-info">
+                <span class="header-cart-cost">R$ 0,00</span>
+                <span class="header-cart-items">0 Itens</span>
+            </p>
+        </div>
+    </header>
+    <main>
+
+        <div class="delivery-rate">
+            <p><span>Entrega grátis</span> a partir de R$50,00</p>
+        </div>
+
+        <div class="pizza-area">
+
+        </div>
+
+    </main>
+
+    <aside>
+        <div class="cart-area hide">
+            <div class="close-cart">
+                <img src="./assets/icons/closewindow.png" alt="">
+            </div>
+
+            <div class="empty-cart">
+                <p>Seu carrinho está vazio</p>
+                <p>Adicione itens</p>
+            </div>
+
+            <div class="cart-area1 displaynone">
+
+                <div>
+                    <p>Seu pedido</p>
+                </div>
+
+                <div class="orders">
+                    
+                </div>
+                
+                <div class="cart-area-12">
+                    <div class="subtotal-area">
+                        <span>Subtotal</span>
+                        <div class="subtotal"></div>
+                    </div>
+
+                    <div class="delivery-area">
+                        <span>Taxa de entrega</span>
+                        <div class="delivery">+ R$7.50</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cart-area2 displaynone">
+                <div class="total-area">
+                    <span>TOTAL</span>
+                    <div class="total"></div>
+                </div>
+                
+                <button>Escolha forma de pagamento</button>
+            </div>
+
+        </div>
+    </aside>
+
+    <div class="pizza-window-area">
+        <div class="pizza-window-body">
+           <div class="pizza-window-body-ls">
+
+                <div class="close-window-mobile">
+                    <img src="./assets/icons/closewindow.png" alt="">
+                </div>
+                <div class="pizza-img">
+                    <img src="" alt="">
+                </div>
+           </div>
+
+           <div class="pizza-window-body-rs">
+
+                <div class="close-window">
+                    <img src="./assets/icons/closewindow.png" alt="">
+                </div>
+                <div class="pizza-info">
+                    <h1></h1>
+                    <div class="pizza-desc">
+                        
+                    </div>
+
+                    <div class="pizza-size-area">
+                        <h4>TAMANHOS</h4>
+
+                        <div class="pizza-sizes">
+                            <div data-size = "0" class="pizza-size">PEQUENA <span></span></div>
+                            <div data-size = "1" class="pizza-size">MÉDIA <span></span></div>
+                            <div data-size = "2" class="pizza-size">GRANDE <span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="pizza-price-area">
+                        <h4>PREÇO</h4>
+
+                       <div class="pizza-prices">
+                            <div class="pizza-price"></div>
+                            <div class="pizza-qt-area">
+                                <button class="pizza-qt-minus">-</button>
+                                <div class="pizza-qt"></div>
+                                <button class="pizza-qt-plus">+</button>
+                            </div>
+                       </div>
+                </div>
+
+                <div class="add-cart">
+                    <button>ADICIONAR AO CARRINHO</button>
+                </div>
+                </div>
+           </div>
+        </div>
+
+       
+    </div>
+
+
+
+
+
+    <script src="./javascript/pizzas.js"></script>
+    <script src="./javascript/script.js"></script>
+</body>
+</html>
