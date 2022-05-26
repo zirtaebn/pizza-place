@@ -8,5 +8,5 @@ Nessa aplicação, é possível:
 -se quiser, remover pizzas do carrinho;
 -obter o preço total com base nas suas escolhas
 
-Link da aplicação: 
+Link da aplicação: https://zirtaebn.github.io/pizza-place/
 
